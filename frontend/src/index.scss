@@ -1,15 +1,60 @@
 @import "node_modules/bootstrap/scss/bootstrap";
 
+a {
+  color: white;
+  text-decoration: none;
+  padding: 5px;
+
+  &:hover {
+    color: antiquewhite;
+  }
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  monospace;
+}
+
+.authPage {
+  a {
+    color: blue;
+  }
+
+  margin-top: 2rem;
+
+  .authPage__form {
+    min-width: 70%;
+    background: aliceblue;
+    border-radius: 2rem;
+    padding: 2rem;
+  }
+}
+
+.shop__leftColumn {
+  padding-top: 1rem;
+
+  .list-group-item {
+    cursor: pointer;
+  }
+}
+
+
+.shop__rightColumn {
+  padding-top: 1rem;
+}
+
+
+.brandBar__cart {
+  padding: .5rem;
+  width: auto;
+  cursor: pointer;
 }
