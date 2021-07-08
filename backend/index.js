@@ -15,7 +15,7 @@ const app = express()
 app.use(cors())
 app.use(express.json()) //чтобы приложение могло парсить JSON
 app.use(express.static(path.resolve(__dirname,'static')))
-app.use(fileupload({}))
+app.use(fileupload({})) //загрузка картинок и тд
 app.use('/api', router)
 app.use(errorHandler) //обработка ошибок(последний миделваре)
 
