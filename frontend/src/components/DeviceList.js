@@ -5,12 +5,16 @@ import DeviceItem from "./DeviceItem";
 
 const DeviceList = () => {
 
+
+
     const {devices} = useContext(Context)
 
     return (
-        <Row>
-            {devices.types.map(device=>(
-                <DeviceItem/>
+        <Row
+        className="deviceList row row-cols-2 row-cols-md-3 row-cols-lg-4 g-2 "
+        >
+            {devices.devices.map(device=>(
+                <DeviceItem key={device.id} device={device}/>
             ))}
         </Row>
     );

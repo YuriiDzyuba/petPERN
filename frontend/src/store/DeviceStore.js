@@ -23,7 +23,8 @@ export default class DeviceStore {
             {id: 1, name: "PHONE2", price: 32343, rating: 4, img: "https://i.shgcdn.com/60947bdd-05af-4c45-955d-2428073898fc/-/format/auto/-/preview/3000x3000/-/quality/lighter/"},
             {id: 2, name: "PHONE333", price: 3343, rating: 4, img: "https://i.shgcdn.com/60947bdd-05af-4c45-955d-2428073898fc/-/format/auto/-/preview/3000x3000/-/quality/lighter/"},
             {id: 3, name: "PHONE-25", price: 1343, rating: 4, img: "https://i.shgcdn.com/60947bdd-05af-4c45-955d-2428073898fc/-/format/auto/-/preview/3000x3000/-/quality/lighter/"},
-            {id: 4, name: "PHONE12", price: 243, rating: 4, img: "https://i.shgcdn.com/60947bdd-05af-4c45-955d-2428073898fc/-/format/auto/-/preview/3000x3000/-/quality/lighter/"},
+            {id: 4, name: "telephone", price: 243, rating: 4, img: "https://i.shgcdn.com/60947bdd-05af-4c45-955d-2428073898fc/-/format/auto/-/preview/3000x3000/-/quality/lighter/"},
+            {id: 5, name: "Iphone15", price: 243, rating: 4, img: "https://i.shgcdn.com/60947bdd-05af-4c45-955d-2428073898fc/-/format/auto/-/preview/3000x3000/-/quality/lighter/"},
         ]
 
         this._selectedType={}

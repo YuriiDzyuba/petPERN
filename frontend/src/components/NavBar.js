@@ -1,12 +1,16 @@
 import React, {useContext} from 'react';
 import {Context} from "../index";
 import {NavLink} from "react-router-dom";
-import {Container, Nav, Navbar} from "react-bootstrap";
-import {LOGIN_ROUTE, REGISTRATION_ROUTE, SHOP_ROUTE} from "../utils/consts";
+import {Button, Container, Nav, Navbar} from "react-bootstrap";
+import {ADMIN_ROUTE, LOGIN_ROUTE, REGISTRATION_ROUTE, SHOP_ROUTE} from "../utils/consts";
 import {observer} from "mobx-react-lite";
+import {useHistory} from 'react-router-dom'
+
 
 const NavBar = observer(() => {
+
     const {user} = useContext(Context)
+    const history = useHistory()
     return (
         <Navbar bg="dark" variant="dark">
             <Container>
@@ -14,12 +18,19 @@ const NavBar = observer(() => {
                 {user.isAuth
                     ?
                     <Nav className="ml-auto">
-                        <NavLink to={LOGIN_ROUTE} onClick={()=> user.setIsAuth(false)}>Out</NavLink>
-                        <NavLink to={REGISTRATION_ROUTE} onClick={()=> user.setIsAuth(false)}>Admin</NavLink>
+                        <Button
+                            variant={'dark'}
+                            onClick={() => history.push(LOGIN_ROUTE)}>Out</Button>
+                        <Button
+                            variant={'dark'}
+                            onClick={() => history.push(ADMIN_ROUTE)}>Admin</Button>
                     </Nav>
                     :
                     <Nav className="ml-auto">
-                        <NavLink to={REGISTRATION_ROUTE} onClick={()=> user.setIsAuth(true)}>Auth</NavLink>
+                        <Button
+                            variant={'dark'}
+                            onClick={() => user.setIsAuth(true)}>Auth
+                        </Button>
                     </Nav>
                 }
             </Container>

@@ -1,13 +1,25 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Button, Container, Form, Row} from "react-bootstrap";
 import {NavLink, useLocation} from "react-router-dom";
 import {LOGIN_ROUTE, REGISTRATION_ROUTE} from "../utils/consts";
+import {login, registration} from "../http/userApi";
 
 
 const Auth = () => {
 
     const location = useLocation()
     const isLogin = location.pathname === LOGIN_ROUTE
+
+    const[email, setEmail] = useState('')
+    const[password, setPassword] = useState('')
+
+    const click = async () =>{
+        if (isLogin){
+            const response = await login()
+        } else {
+            const response = await registration(email, password)
+        }
+    }
 
     return (
         <Container
@@ -19,14 +31,24 @@ const Auth = () => {
                 <h3>{isLogin ? "Auth" : "Registration"}</h3>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" placeholder="Enter email"/>
+                    <Form.Control
+                        type="email"
+                        placeholder="Enter email"
+                        value={email}
+                        onChange={e=>setEmail(e.target.value)}
+                    />
                     <Form.Text className="text-muted">
                         We'll never share your email with anyone else.
                     </Form.Text>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" placeholder="Password"/>
+                    <Form.Control
+                        type="password"
+                        placeholder="Password"
+                        value={password}
+                        onChange={e=>setPassword(e.target.value)}
+                    />
                 </Form.Group>
                 <Row
                     className="g-1 "
